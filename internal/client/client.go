@@ -9,7 +9,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-func Run(ctx context.Context, address string, a, b int) {
+func Run(ctx context.Context, address string, a, b int, c *int) {
 	connection, err := grpc.Dial(address, grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("could not connect: %s", err)
@@ -30,4 +30,5 @@ func Run(ctx context.Context, address string, a, b int) {
 	}
 
 	log.Printf("got result: %d", result.C)
+	*c = int(result.C)
 }

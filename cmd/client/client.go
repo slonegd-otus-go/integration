@@ -25,6 +25,7 @@ var Command = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 
 		address := fmt.Sprintf("%s:%d", host, port)
-		client.Run(cmd.Context(), address, a, b)
+		var res int
+		client.Run(cmd.Context(), address, a, b, &res)
 	},
 }
