@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestStorage(t *testing.T) {
+func TestClient(t *testing.T) {
 	tests := []struct {
 		name string
 		a, b int
