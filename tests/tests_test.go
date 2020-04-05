@@ -15,10 +15,16 @@ func TestClient(t *testing.T) {
 		want int
 	}{
 		{
-			name: "2 + 3",
+			name: "2 + 3 = 5",
 			a:    2,
 			b:    3,
 			want: 5,
+		},
+		{
+			name: "1 + 2 = 3",
+			a:    1,
+			b:    2,
+			want: 3,
 		},
 	}
 	for _, tt := range tests {
