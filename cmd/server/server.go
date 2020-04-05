@@ -1,13 +1,27 @@
 package server
 
 import (
+	"fmt"
+
+	"github.com/slonegd-otus-go/integration/internal/server"
 	"github.com/spf13/cobra"
 )
+
+var host string
+var port int
+
+func init() {
+	Command.Flags().StringVar(&host, "host", "127.0.0.1", "host to listen")
+	Command.Flags().IntVar(&port, "port", 8080, "port to listen")
+}
 
 var Command = &cobra.Command{
 	Use:   "server",
 	Short: "Run grpc server",
 	Run: func(cmd *cobra.Command, args []string) {
-		// there will be server
+
+		address := fmt.Sprintf("%s:%d", host, port)
+		server.Run(cmd.Context(), address)
+
 	},
 }
