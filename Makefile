@@ -17,7 +17,5 @@ example:
 	docker-compose down;
 
 test:
-	docker-compose build; \
-	docker-compose up -d; \
-	go test ./...; \
-	docker-compose down;
+	go test ./...
+
